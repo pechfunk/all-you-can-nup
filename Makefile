@@ -1,4 +1,4 @@
-#!/usr/bin/env make
+#!/usr/bin/make -f
 #----------------------------------------------------------------------
 # All you can n-up
 # a Makefile which applies a variety of multiple-page-printing strategies
