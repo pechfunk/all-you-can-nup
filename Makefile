@@ -3,6 +3,8 @@
 # All you can n-up
 # a Makefile which applies a variety of multiple-page-printing strategies
 # to whatever pdfs you provide.
+#
+# Currently, patterns are hard-coded, and you have to create new patterns.
 #----------------------------------------------------------------------
 
 PDFTOPS := pdftops
@@ -41,19 +43,4 @@ clean:
 
 
 
-.PHONY: conv_ps
-conv_ps: $(PDFSPS)
 
-.PHONY: debug
-debug: 
-	echo $(PDFS)
-	echo $(PLAIN_PS)
-
-#pstops -d1 "4:-3L@.707(21cm,0)+0L@.707(21cm,14.85cm),1R@.707(0cm,29.7cm)+-2R@.707(0cm,14.85cm)"
-#pstops  "4:-3L@.7(21cm,0)+0L@.7(21cm,14.85cm),1R@.7(0cm,29.7cm)+-2R@.7(0cm,14.85cm)" 
-#*** LNCS 3
-#pstops '3:0L@0.7(210mm,-15mm)+1L@0.7(210mm,75mm)+2L@0.7(210mm,165mm)'
-#*** Zweispaltiges Proceedings minus Rand
-# pstops '2:0L@0.8(230mm,-8mm)+1L@0.8(230mm,134mm)'
-#*** Elsevier pseudo-LNCS
-#pstops '2:0L@0.86(230mm,-8mm)+1L@0.86(230mm,134mm)'
