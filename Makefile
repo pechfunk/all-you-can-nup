@@ -17,9 +17,10 @@ PS_2COL2 := $(patsubst %.pdf,%.2col2.nup.ps,$(PDFS))
 PS_SD1COL2 := $(patsubst %.pdf,%.sd1col2.nup.ps,$(PDFS))
 PS_LNCS3 := $(patsubst %.pdf,%.lncs3.nup.ps,$(PDFS))
 PS_BOOKLET:= $(patsubst %.pdf,%.booklet.nup.ps,$(PDFS))
+PS_GEN2UP := $(patsubst %.pdf,%.gen2up.nup.ps,$(PDFS))
 
 .PHONY: all
-all:	$(PS_2COL2) $(PS_SD1COL2) $(PS_LNCS3) $(PS_BOOKLET)
+all:	$(PS_2COL2) $(PS_SD1COL2) $(PS_LNCS3) $(PS_BOOKLET) $(PS_GEN2UP)
 
 .PHONY: clean
 clean:	
@@ -40,6 +41,8 @@ clean:
 %.booklet.nup.ps : %.tmp.ps
 	$(PSTOPS) "4:-3L@.7(21cm,0)+0L@.7(21cm,14.85cm),1R@.7(0cm,29.7cm)+-2R@.7(0cm,14.85cm)" $^ $@
 
+%.gen2up.nup.ps : %.tmp.ps
+	$(PSTOPS) "2:0L@0.71(21cm,0)+1L@.7(21cm,14.85cm)" $^ $@
 
 
 
