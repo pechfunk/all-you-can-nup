@@ -31,7 +31,7 @@ clean:
 	$(PDFTOPS) $^ $@
 
 %.2col2.nup.ps : %.tmp.ps
-	$(PSTOPS) '4:0L@0.8(224mm,-8mm)+1L@0.8(224mm,134mm),2L@0.8(212mm,-8mm)+3L@0.8(212mm,134mm)' $^ $@
+	$(PSTOPS) '4:0L@0.78(224mm,-8mm)+1L@0.78(224mm,134mm),2L@0.78(212mm,-8mm)+3L@0.78(212mm,134mm)' $^ $@
 
 %.sd1col2.nup.ps : %.tmp.ps
 	$(PSTOPS) '2:0L@0.86(230mm,-8mm)+1L@0.86(230mm,134mm)' $^ $@
